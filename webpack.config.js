@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
     entry: {
         popup: './src/popup.jsx'
-        // background: './src/background.jsx'
+        //background: './src/background.jsx'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -33,5 +33,9 @@ module.exports = {
                 {from: "public"}
             ]
         })
-    ]
+    ],
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    }
 }
